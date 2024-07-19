@@ -1,0 +1,16 @@
+- name: My first play
+  hosts: all
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+
+    - name: Print message
+      ansible.builtin.debug:
+        msg: Hello world
+    
+    - name: ensure pip installed
+      ansible.builtin.yum:
+        name: python3-pip
+        state: present
+      become: true
+      become_user: root
